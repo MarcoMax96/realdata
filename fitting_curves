@@ -1,0 +1,40 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+# Load the NumPy file
+file_path = r"C:\Users\rmfia\PycharmProjects\pythonProject7\OGD"  # Replace with your actual file name
+data = np.load(file_path)
+
+# Define the function to fit
+def custom_function(x, a, c, f):
+    return f+c * (1 - np.exp(-a * x))
+
+# Generate x values (index positions)
+x_values = np.arange(len(data))
+
+# Fit the function to the data
+params, _ = curve_fit(custom_function, x_values, data, maxfev=10000)
+
+# Extract fitted parameters
+a_fit, c_fit, f_fit = params
+
+# Print the fitted parameters
+print(f"Best-fit values: a = {a_fit}, c = {c_fit}, f={f_fit}")
+
+# Generate fitted values
+fitted_values = custom_function(x_values, a_fit, c_fit, f_fit)
+
+# Plot the data and the fitted function
+plt.figure(figsize=(10, 5))
+plt.plot(x_values, data, label="Original Data", color="blue", alpha=0.6)
+plt.plot(x_values, fitted_values, label=f"Fitted Function: {f_fit:.4f}+{c_fit:.4f}(1 - e^(-{a_fit:.6f}x))", color="red")
+plt.xlabel("Index")
+plt.ylabel("Value")
+plt.title("Fitting Data to f(x) = f+c(1 - e^(-ax))")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Print the lambda function
+print(f"Lambda function: lambda x: {f_fit:.4f}+{c_fit:.4f} * (1 - np.exp(-{a_fit:.6f} * x))")
