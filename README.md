@@ -10,6 +10,7 @@ Stochastic Rising Bandits are a powerful tool to model a lot of real-world-chall
 
 • the environment generates the reward comparing the prediction $\hat{y}_t$ to the target class $y_t$ using the following function
 $R_t=1-|y_t-\hat{y}_t|$;
+
 • the base algorithm is updated using ${x_t,y_t}$; 
 
 Since the base algorithms are trained only if their arm is selected, this is a problem which belongs to the rested scenario.
