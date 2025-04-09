@@ -25,7 +25,7 @@ sequentially fed with all the available 50,000 samples. The data were available 
 ![Alt text](image.png)
 
 Then, all these learning curves were fitted to the curve $f(n)=a+b(1-e^{-cn})$ (through the code in fitting_curves), and were put in the model section as a Lambda function in the code provided in the zip file we have uploaded for the submission. The experiments will be organized as follow. First, we run all the algorithms against we are competing against (rexp3,sw_kl_ucb,kl_ucb,r_ed (Rested-UCB, Metelli et al., 2022),ser4, TS (Thompson Sampling), with $T$ time horizon set to 250000. The experiment shows that the algorithm devised for the sandard bandit is competitive, meaning that the environment in not too challenging (i.e., $\sigma$ in pur analysis is low). We then add an artificial arm to make the environment more difficult for the algorithm, for the second experiment we compare the standard Thompson Sampling against the sliding window Thompson Sampling and the Explore-Then-Commit version (the sliding windowa are set as in the paper). For the third and final experiment we compare the algorithms with the forced exploration against all the dynamic baselines. We present the empirical average regret on 15 runs, with shades to show the empirical standard deviation. To replicate the experiments you need to add this set of arms in "model.py" in the code provided in the zip file for the submission.
-![Alt text](model)
+![Alt text](model.png)
 
 # Experiment 1
 # Experiment 2
