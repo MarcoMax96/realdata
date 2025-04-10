@@ -35,3 +35,5 @@ The first experiment shows that, as we shown in the paper, conventional algorith
 We add an arm whose evolution challenges the effectiveness of standard bandit algorithms, i.e., such that a large number of pulls is needed to inferentially estimate the best arm from the other. With the following experiment we show that with a forced exploration set to $15000$, and the sliding window set as $\sqrt{T}$. The flattening of the curve shows the statistical superiority of the algorithms proposed, coherently with the theoretical analysis.
 ![Alt text](experimentimdbcomparison.png)
 # Experiment 3
+The experiment proposeed show how the algorithms with forced exploration outperforms all other algorithm, except for SW-KL-UCB. However, the experiment also shows that the regret curve of the forced exploration algorithms is far way flatter than the one of SW-KL-UCB, showing that for long enough time horizon can be the most competitive algorithms out of all baselines.
+![Alt text](exp3.png)
