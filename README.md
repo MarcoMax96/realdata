@@ -28,5 +28,6 @@ Then, all these learning curves were fitted to the curve $f(n)=a+b(1-e^{-cn})$ (
 ![Alt text](model.png)
 
 # Experiment 1
+![Alt text](exp1.png)
 # Experiment 2
 # Experiment 3
